@@ -4,17 +4,17 @@ import { conta } from "../src/model/Conta";
 
 export function main () {
 
-    let opcao: number;
+    // let opcao: number;
 
-    let c1: conta = new conta(1, 123, 1, "Jennifer", 1000000);
+    // let c1: conta = new conta(1, 123, 1, "Jennifer", 1000000);
     
-    c1.visualizar();
+    // c1.visualizar();
 
-    c1.sacar(1000);
-    c1.visualizar();
+    // c1.sacar(1000);
+    // c1.visualizar();
     
-    c1.depositar(50000);
-    c1.visualizar();
+    // c1.depositar(50000);
+    // c1.visualizar();
 
     while (true){
 
