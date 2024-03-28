@@ -25,7 +25,7 @@ export function main () {
         console.log("                                               ");
         console.log("************xx****************xx***************");
         console.log("***********************************************");
-        console.log("********tecle o numero que deseje acessar******");
+        console.log("********tecle o numero que deseja acessar******");
         console.log("                                               ");
         console.log("          1-)Crie sua conta                    ");
         console.log("          2-) Listar todas as contas           ");
