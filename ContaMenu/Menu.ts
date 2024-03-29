@@ -1,22 +1,42 @@
 import readlinesync = require("readline-sync");
-import { colors } from "../src/model/util/Colors"; 
-import { conta } from "../src/model/Conta";
+import { colors } from "../src/model/util/Colors";
+import { conta } from "../src/model/util/Conta";
+import { ContaController } from "../src/model/controller/ContaController";
+import { ContaCorrente } from "../src/model/util/ContaCorrente";
+import { ContaPoupanca } from "../src/model/util/ContaPoupança";
 
-export function main () {
+export function main() {
 
-    // let opcao: number;
+    let opcao: number;
+    let conta: ContaController = new ContaController();
 
-    // let c1: conta = new conta(1, 123, 1, "Jennifer", 1000000);
-    
-    // c1.visualizar();
+    let cc1: ContaCorrente = new ContaCorrente(1, 123, "Jennifer", 6767, 1000000, 1);
 
-    // c1.sacar(1000);
-    // c1.visualizar();
-    
-    // c1.depositar(50000);
-    // c1.visualizar();
+     cc1.visualizar();
 
-    while (true){
+    cc1.sacar(1000);
+
+    cc1.visualizar();
+
+    cc1.depositar(5000);
+
+    cc1.visualizar(); 
+
+   let cp: ContaPoupanca = new ContaPoupanca(10, 123, "Jennifer", 6767, 100000, 1);
+   
+
+
+    cp.visualizar();
+    cp.sacar(200);
+    cp.visualizar();
+    cp.depositar(1000);
+    cp:visualizar();
+
+
+
+
+
+    while (true) {
 
         console.log(colors.bg.black, colors.fg.magenta,)
         console.log("***********************************************");
@@ -39,7 +59,7 @@ export function main () {
         console.log("                                               ");
         console.log("***********************************************");
         console.log("                                               ",
-        colors.reset);
+            colors.reset);
 
         console.log("Entre com a opcao desejada: ");
         opcao = readlinesync.questionInt(" ");
@@ -48,49 +68,50 @@ export function main () {
             case 1:
                 console.log(colors.fg.whitestrong,
                     "\n\nCriar Conta\n\n", colors.reset);
-                    keyPress()
+                keyPress()
                 break;
 
             case 2:
                 console.log(colors.fg.whitestrong,
                     "\n\nListar Conta\n\n", colors.reset);
-                    keyPress()
+                keyPress()
+
                 break;
 
             case 3:
                 console.log(colors.fg.whitestrong,
                     "\n\nBuscar Conta por numero\n\n", colors.reset);
-                    keyPress()
+                keyPress()
                 break;
 
             case 4:
                 console.log(colors.fg.whitestrong,
                     "\n\nAtualizar dados das contas\n\n", colors.reset);
-                    keyPress()
+                keyPress()
                 break;
 
             case 5:
                 console.log(colors.fg.whitestrong,
                     "\n\nApagar Conta\n\n", colors.reset);
-                    keyPress()
+                keyPress()
                 break;
 
             case 6:
                 console.log(colors.fg.whitestrong,
                     "\n\nSacar\n\n", colors.reset);
-                    keyPress()
+                keyPress()
                 break;
 
             case 7:
                 console.log(colors.fg.whitestrong,
                     "\n\nDepositar\n\n", colors.reset);
-                    keyPress()
+                keyPress()
                 break;
 
             case 8:
                 console.log(colors.fg.whitestrong,
                     "\n\nTransferir valores entre as contas\n\n", colors.reset);
-                    keyPress()
+                keyPress()
                 break;
 
             case 9:
@@ -122,4 +143,8 @@ function keyPress(): void {
 
 }
 
-main(); // Chamada da função principal
+main();
+
+function visualizar() {
+    throw new Error("Function not implemented.");
+}

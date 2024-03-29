@@ -1,4 +1,7 @@
 export abstract class conta {
+    static visualizar() {
+        throw new Error("Method not implemented.");
+    }
 
     private _numero: number;
     private _agencia: number;
