@@ -1,10 +1,9 @@
 import readlinesync = require("readline-sync");
-import { conta } from "../src/model/util/conta";
 import { colors } from "../src/model/util/Colors";
+import { conta } from "../src/model/util/Conta";
 import { ContaController } from "../src/model/controller/ContaController";
 import { ContaCorrente } from "../src/model/util/ContaCorrente";
 import { ContaPoupanca } from "../src/model/util/ContaPoupança";
-
 
 export function main() {
 
@@ -18,6 +17,8 @@ export function main() {
 
   
    let cp: ContaPoupanca = new ContaPoupanca(conta.gerarNumero(), 10, "Jennifer", 123, 6767, 100000);
+
+
    
 
     while (true) {
@@ -64,6 +65,7 @@ export function main() {
 
                     console.log("Digite o saldo da conta: ");
                     saldo = readlinesync.questionFloat("")
+                
 
                     switch(tipo){
                         case 1:
@@ -81,6 +83,7 @@ export function main() {
                             new ContaPoupanca(conta.gerarNumero(), agencia, titular, tipo, saldo, aniversario)
                         );
                         break;
+                    
 
                     }
 
@@ -111,9 +114,10 @@ export function main() {
 
                     console.log("Digite o numero da conta: ");
                     numero = readlinesync.questionInt("")
-                    let contas = conta.buscarNoArray(numero)
+
+                    let conta = conta.buscarNoArray(numero)
                     
-                    if ( conta !== null){
+                    if (conta !== null) {
 
                         console.log(colors.fg.whitestrong,
                             "\n\nCriar Conta\n\n", colors.reset);
@@ -124,11 +128,10 @@ export function main() {
                             console.log("Digite o nome do Titular: ");
                             titular = readlinesync.question("")
          
-                            tipo = conta.tipo    
+                            tipo = conta.tipo     
 
                             console.log("Digite o saldo da conta: ");
                             saldo = readlinesync.questionFloat("")
-                        
         
                             switch(tipo){
                                 case 1:
@@ -142,13 +145,10 @@ export function main() {
                                 case 2:
                                     console.log("Digite o dia do Aniversario da conta: ");
                                 aniversario = readlinesync.questionInt("");
-                                conta.atualizar
+                                conta.atualizar(
                                     new ContaPoupanca(numero, agencia, titular, tipo, saldo, aniversario)
-
-                        
-
-                    }
-                }else 
+                                    )
+                    } else 
                     console.log("A conta nao foi encontrada!");
                 keyPress()
                 break;
@@ -195,6 +195,7 @@ export function main() {
     }
 }
 
+
 function sobre(): void {
     console.log("*****************************************************");
     console.log("Projeto Desenvolvido por: Jennifer Fernandes ");
@@ -202,6 +203,7 @@ function sobre(): void {
     console.log("github.com/ jennizs");
     console.log("*****************************************************");
 }
+
 
 function keyPress(): void {
     console.log(colors.reset, "");
@@ -215,3 +217,4 @@ main();
 function visualizar() {
     throw new Error("Function not implemented.");
 }
+

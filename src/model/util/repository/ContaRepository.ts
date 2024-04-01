@@ -1,11 +1,11 @@
-import { conta } from "../Conta";
+import { conta } from "../conta";
 
 export interface ContaRepository {
 
     procurarPorNumero (numero: number): void;
     listarTodas(): void;
-    cadastrar(conta: conta): void;
-    atualizar(conta: conta): void;
+    cadastrar(contas: conta): void;
+    atualizar(contas: conta): void;
     deletar(numero: number): void;
 
 //metodo Bancarios

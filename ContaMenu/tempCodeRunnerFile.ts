@@ -1,7 +1,16 @@
-cc1.depositar(1000);
-    cc1.sacar(500);
-    cc1.visualizar();
 
-    cp.depositar(2000);
-    cp.sacar(100);
-    cp.visualizar();
+                console.log(colors.fg.whitestrong,
+                    "\nBanco Brazil com Z - O seu Futuro começa aqui!", colors.reset);
+                sobre();
+                return; // Encerra a função main(), saindo do loop while.
+
+            default:
+                console.log("\nOpção Inválida!\n");
+                break;
+        }
+    }
+}
+
+function sobre(): void {
+    console.log("*****************************************************");
+    console.log("Projeto Desenvolvido por: Jennifer Fernande
